@@ -26,6 +26,8 @@ class EntryListViewController: UIViewController, UITableViewDataSource {
         if let journal = journal {
             title = journal.title
         }
+        
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

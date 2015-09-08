@@ -49,8 +49,9 @@ class EntryDetailViewController: UIViewController {
             newEntry.title = titleTextField.text
             newEntry.body = bodyTextView.text
         }
-    
+        
         JournalController.saveManagedObjectContext()
+        navigationController?.popViewControllerAnimated(true)
     }
     
 
