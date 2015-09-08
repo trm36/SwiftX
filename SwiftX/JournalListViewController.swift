@@ -59,22 +59,24 @@ class JournalListViewController: UIViewController, UITableViewDataSource {
         
         alert.addAction(action0)
 
-        
-        let action1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (action) -> Void in
+        // _ means I don't care about the parameter and won't use it
+        // or give it a name to access and use parameter
+        let action1 = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default) { (_) -> Void in
             let journal = JournalController.createJournal()
-            
+    
             if let textFields = alert.textFields {
                 journal.title = textFields[0].text
                 journal.tagline = textFields[1].text
             }
             
             JournalController.saveManagedObjectContext()
+            
+            self.tableView.reloadData()
         }
         
+        alert.addAction(action1)
         
-        
-        
-        
+        self.presentViewController(alert, animated: true, completion: nil)
 
     }
     
