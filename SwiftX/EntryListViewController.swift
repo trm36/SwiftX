@@ -8,20 +8,56 @@
 
 import UIKit
 
-class EntryListViewController: UIViewController {
+class EntryListViewController: UIViewController, UITableViewDataSource {
     
     var journal: Journal?
 
     @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let journal = journal {
+            title = journal.title
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: - TableView DataSource Methods
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let journal = journal {
+            if let entries = journal.entries {
+                return entries.count
+            }
+        }
+        
+        return Int(0)
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("entryCell", forIndexPath: indexPath)
+        
+        if let journal = journal {
+            if let entries = journal.entries {
+                let entry = entries[indexPath.row] as! Entry
+                
+                cell.textLabel?.text = entry.title
+                cell.detailTextLabel?.text = entry.body
+            }
+        }
+        
+        return cell
     }
     
 

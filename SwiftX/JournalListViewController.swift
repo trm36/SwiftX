@@ -30,7 +30,7 @@ class JournalListViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("journalCell") as UITableViewCell!
+        let cell = tableView.dequeueReusableCellWithIdentifier("journalCell", forIndexPath:indexPath)
         
         let journal = JournalController.journals()[indexPath.row]
         
