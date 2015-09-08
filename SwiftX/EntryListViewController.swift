@@ -71,6 +71,10 @@ class EntryListViewController: UIViewController, UITableViewDataSource {
         
         if segue.identifier == "addEntry" {
             
+            if let journal = journal {
+                let entryDetailViewController = segue.destinationViewController as! EntryDetailViewController
+                entryDetailViewController.journal = journal
+            }
         } else if segue.identifier == "entryToDetail" {
             let entryDetailViewController = segue.destinationViewController as! EntryDetailViewController
             
@@ -79,15 +83,10 @@ class EntryListViewController: UIViewController, UITableViewDataSource {
                 
                 let indexPath = tableView.indexPathForCell(cell)
                 
-                if let indexPath = indexPath {
+                if let indexPath = indexPath, journal = journal, entries = journal.entries {
+                    let entry = entries[indexPath.row] as! Entry
                     
-                    if let journal = journal {
-                        if let entries = journal.entries {
-                            let entry = entries[indexPath.row] as! Entry
-                            
-                            entryDetailViewController.entry = entry
-                        }
-                    }
+                    entryDetailViewController.entry = entry
                 }
             }
         }

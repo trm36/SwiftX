@@ -15,11 +15,21 @@ class EntryDetailViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     
     var entry: Entry?
+    var journal: Journal?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let entry = entry {
+            bodyTextView.text = entry.body
+            titleTextField.text = entry.title
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +38,19 @@ class EntryDetailViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(sender: UIBarButtonItem) {
+        
+        if let entry = entry {
+            entry.title = titleTextField.text
+            entry.body = bodyTextView.text
+            
+            
+        } else if let journal = journal {
+            let newEntry = JournalController.createEntryInJournal(journal)
+            newEntry.title = titleTextField.text
+            newEntry.body = bodyTextView.text
+        }
+    
+        JournalController.saveManagedObjectContext()
     }
     
 
