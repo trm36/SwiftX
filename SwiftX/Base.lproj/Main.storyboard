@@ -152,7 +152,7 @@
         <!--Title-->
         <scene sceneID="5Th-Bh-5cD">
             <objects>
-                <viewController id="waR-wF-4nY" sceneMemberID="viewController">
+                <viewController id="waR-wF-4nY" customClass="EntryDetailViewController" customModule="SwiftX" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NJL-9Q-Osa"/>
                         <viewControllerLayoutGuide type="bottom" id="SeA-si-1af"/>
@@ -185,8 +185,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="vvv-DK-T9g">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xaT-AJ-7lA"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="xaT-AJ-7lA">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="waR-wF-4nY" id="qZ6-Te-U7A"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="bodyTextView" destination="Yg7-wA-dhP" id="eQO-YA-Guk"/>
+                        <outlet property="titleTextField" destination="1Yz-bn-ds0" id="lf6-xk-9av"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dtD-03-v5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		012039DA1B9F746700FDE2B5 /* EntryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012039D91B9F746700FDE2B5 /* EntryListViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		012039DC1B9F7E4300FDE2B5 /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012039DB1B9F7E4300FDE2B5 /* EntryDetailViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		01C70A9A1B9F470E00EF0D2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01C70A991B9F470E00EF0D2A /* AppDelegate.swift */; };
 		01C70A9F1B9F470E00EF0D2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01C70A9D1B9F470E00EF0D2A /* Main.storyboard */; };
 		01C70AA11B9F470E00EF0D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01C70AA01B9F470E00EF0D2A /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		012039D91B9F746700FDE2B5 /* EntryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryListViewController.swift; sourceTree = "<group>"; };
+		012039DB1B9F7E4300FDE2B5 /* EntryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
 		01C70A961B9F470E00EF0D2A /* SwiftX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01C70A991B9F470E00EF0D2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01C70A9E1B9F470E00EF0D2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 				01C70ACB1B9F4CE000EF0D2A /* Journal.swift */,
 				01C70AD21B9F4E4100EF0D2A /* JournalController.swift */,
 				01C70ACC1B9F4CE000EF0D2A /* Entry+CoreDataProperties.swift */,
+				012039DB1B9F7E4300FDE2B5 /* EntryDetailViewController.swift */,
 				01C70ACD1B9F4CE000EF0D2A /* Entry.swift */,
 				01C70AD81B9F5B3B00EF0D2A /* JournalListViewController.swift */,
 				012039D91B9F746700FDE2B5 /* EntryListViewController.swift */,
@@ -290,6 +293,7 @@
 				01C70AD01B9F4CE000EF0D2A /* Entry+CoreDataProperties.swift in Sources */,
 				01C70ACF1B9F4CE000EF0D2A /* Journal.swift in Sources */,
 				01C70AD91B9F5B3B00EF0D2A /* JournalListViewController.swift in Sources */,
+				012039DC1B9F7E4300FDE2B5 /* EntryDetailViewController.swift in Sources */,
 				01C70A9A1B9F470E00EF0D2A /* AppDelegate.swift in Sources */,
 				012039DA1B9F746700FDE2B5 /* EntryListViewController.swift in Sources */,
 				01C70ACE1B9F4CE000EF0D2A /* Journal+CoreDataProperties.swift in Sources */,
