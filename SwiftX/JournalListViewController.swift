@@ -80,14 +80,28 @@ class JournalListViewController: UIViewController, UITableViewDataSource {
 
     }
     
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "journalToEntry" {
+            let entryListVC = segue.destinationViewController as! EntryListViewController
+            
+            if let object = sender {
+                let senderCell = object as! UITableViewCell
+                
+                let indexPath = tableView.indexPathForCell(senderCell)
+                
+                if let indexPath = indexPath {
+                    let journal = JournalController.journals()[indexPath.row]
+                    
+                    entryListVC.journal = journal
+                }
+            }
+        }
     }
-    */
 
 }
